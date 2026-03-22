@@ -8,10 +8,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import buildingBlocksImage from "@/assets/b216ba02fe20ef316352409d4bfc53b041db7e08.png";
-import buildingBlocksImage1 from "@/assets/e25f53a5f4f2a0f7ba5f06d4fd95e4f3e3eb3cd5.png";
-import buildingBlocksImage2 from "@/assets/2e33ec73e85aa70d7b09e8abc1de64a16f99ab4f.png";
-import buildingBlocksImage3 from "@/assets/a6fb1e856aadcd6cdc1bc54b33c06ab2f2ae0f6e.png";
-import buildingBlocksImage4 from "@/assets/b0b00d4f43612fe8a2fdc4ca04c9ffc4e1f6a5c7.png";
+
+
+
+
 
 export function BuildingBlocks() {
   const navigate = useNavigate();
