@@ -1,0 +1,53 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Custom Carousel Styles */
+.carousel-container .slick-dots {
+  bottom: -40px;
+}
+
+.carousel-container .slick-dots li button:before {
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.carousel-container .slick-dots li.slick-active button:before {
+  color: #3b82f6;
+}
+
+.carousel-container .slick-prev,
+.carousel-container .slick-next {
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 24px 24px !important;
+}
+
+.carousel-container .slick-prev {
+  left: 20px;
+  background-image: url('../imports/chevron-left.svg') !important;
+}
+
+.carousel-container .slick-next {
+  right: 20px;
+  background-image: url('../imports/chevron-right.svg') !important;
+}
+
+.carousel-container .slick-prev:before,
+.carousel-container .slick-next:before {
+  content: '' !important;
+  display: none !important;
+}
+
+.carousel-container .slick-prev,
+.carousel-container .slick-next {
+  opacity: 0.7;
+}
+
+.carousel-container .slick-prev:hover,
+.carousel-container .slick-next:hover {
+  opacity: 1;
+}
