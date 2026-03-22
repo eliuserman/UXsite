@@ -45,7 +45,7 @@ export const projects: Project[] = [
       "/assets/6cc191ff832474bb7684a41cadb9fffe197efa33.png",
       "/assets/9b0308f19eeb0f291eed688420838d7ee46a7c88.png",
     ],
-    videoUrl: "https://www.youtube.com/embed/4-OJocDEHPU",
+    videoUrl: "https://www.youtube.com/embed/cmxScYfcOTo",
     content: {
       overview: "Construction data is notoriously fragmented — specifications live in Word documents, requirements in spreadsheets, and design intent in 3D BIM models. This project tackled a core pain point: how do you automatically connect hundreds of pages of text-based requirements to thousands of 3D model elements, accurately and at scale?",
       research: "We embedded with engineers and project managers across several active construction projects to map their workflows. We found that data-matching was done manually in Excel, consuming up to 40% of a project coordinator's week. Interviews revealed that errors in matching led to costly rework and compliance failures during audits.",
