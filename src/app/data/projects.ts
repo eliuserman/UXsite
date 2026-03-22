@@ -23,7 +23,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "mobile-banking-redesign",
+    id: "connecting-visual-text-data",
     title: "Connecting visual and text data",
     category: "Company: Bimmatch",
     description: "Automation in construction project data - Connecting any text-data requirement to any 3D model data-element of the project",
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "ecommerce-optimization",
+    id: "im-free-again",
     title: "I'm free again! (parents only...)",
     category: "Company: Amdocs",
     description: "Parent's app to control the traffic and usage of WIFI resource at home, any time from any place",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "new-project-3",
+    id: "context-performance-cost",
     title: "Context in the service of performance & cost",
     category: "Company: Bimmatch",
     description: "Improving performance, response accuracy, and reducing tokens in AI solution, by design changes only",

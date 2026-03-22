@@ -15,7 +15,7 @@ import bimmatchSlide4 from "@/assets/9b0308f19eeb0f291eed688420838d7ee46a7c88.pn
 
 export function MobileBankingRedesign() {
   const navigate = useNavigate();
-  const project = projects.find((p) => p.id === "mobile-banking-redesign");
+  const project = projects.find((p) => p.id === "connecting-visual-text-data");
   const [showVideo, setShowVideo] = useState(false);
   const [isValidationExpanded, setIsValidationExpanded] = useState(false);
   const [isSecondSectionExpanded, setIsSecondSectionExpanded] = useState(false);

@@ -17,7 +17,7 @@ import workshopImage from "@/assets/dee6f445e99c1e80101bc5b66d8617fe683d31bf.png
 
 export function EcommerceOptimization() {
   const navigate = useNavigate();
-  const project = projects.find((p) => p.id === "ecommerce-optimization");
+  const project = projects.find((p) => p.id === "im-free-again");
   const [showVideo, setShowVideo] = useState(false);
 
   // DEBUG: Log imported values

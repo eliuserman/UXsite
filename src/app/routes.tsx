@@ -4,7 +4,7 @@ import { Root } from "./components/Root";
 import { Home } from "./components/Home";
 import { MobileBankingRedesign } from "./components/projects/MobileBankingRedesign";
 import { EcommerceOptimization } from "./components/projects/EcommerceOptimization";
-import { NewProject3 } from "./components/projects/NewProject3";
+import { ContextPerformanceCost } from "./components/projects/ContextPerformanceCost";
 import { BuildingBlocks } from "./components/projects/BuildingBlocks";
 
 const routes: RouteObject[] = [
@@ -12,25 +12,25 @@ const routes: RouteObject[] = [
     path: "/",
     Component: Root,
     children: [
-      { 
-        index: true, 
-        Component: Home 
+      {
+        index: true,
+        Component: Home
       },
-      { 
-        path: "project/mobile-banking-redesign", 
-        Component: MobileBankingRedesign 
+      {
+        path: "project/connecting-visual-text-data",
+        Component: MobileBankingRedesign
       },
-      { 
-        path: "project/ecommerce-optimization", 
-        Component: EcommerceOptimization 
+      {
+        path: "project/im-free-again",
+        Component: EcommerceOptimization
       },
-      { 
-        path: "project/new-project-3", 
-        Component: NewProject3 
+      {
+        path: "project/context-performance-cost",
+        Component: ContextPerformanceCost
       },
-      { 
-        path: "project/building-blocks", 
-        Component: BuildingBlocks 
+      {
+        path: "project/building-blocks",
+        Component: BuildingBlocks
       },
       {
         path: "*",
