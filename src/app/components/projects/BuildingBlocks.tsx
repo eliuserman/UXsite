@@ -1,34 +1,30 @@
 import { useNavigate } from "react-router";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
-import { ArrowLeft, Play, Users, Clock, Building2, Sparkles, Palette, ClipboardCheck, ChevronDown, ChevronUp } from "lucide-react";
-import { projects, Project } from "../../data/projects";
+import { ArrowLeft, Users, Building2, Sparkles, Palette, ClipboardCheck, ChevronDown, ChevronUp } from "lucide-react";
+import { projects } from "../../data/projects";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import buildingBlocksImage from "@/assets/b216ba02fe20ef316352409d4bfc53b041db7e08.png";
+import a1 from "@/assets/a1.png";
+import a2 from "@/assets/a2.png";
+import a3 from "@/assets/a3.png";
+import a4 from "@/assets/a4.png";
+import a5 from "@/assets/a5.png";
 
-
-
-
+const sliderImages = [a1, a2, a3, a4, a5];
 
 export function BuildingBlocks() {
   const navigate = useNavigate();
   const project = projects.find((p) => p.id === "building-blocks");
-  const [showVideo, setShowVideo] = useState(false);
   const [isValidationExpanded, setIsValidationExpanded] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
-  // Handle toggle with scroll to section when collapsing
   const handleToggle = () => {
     if (isValidationExpanded && sectionRef.current) {
-      // Collapsing - scroll to top of section
       const yOffset = -100;
       const y = sectionRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
@@ -36,7 +32,6 @@ export function BuildingBlocks() {
     setIsValidationExpanded(!isValidationExpanded);
   };
 
-  // Helper function to navigate to contact section
   const handleContactClick = () => {
     navigate("/");
     setTimeout(() => {
@@ -49,31 +44,12 @@ export function BuildingBlocks() {
     }, 100);
   };
 
-  // Helper function to get the correct image source
-  const getImageSrc = (imageSrc: string) => {
-    if (imageSrc === "/assets/b216ba02fe20ef316352409d4bfc53b041db7e08.png") {
-      return buildingBlocksImage;
-    } else if (imageSrc === "/assets/e25f53a5f4f2a0f7ba5f06d4fd95e4f3e3eb3cd5.png") {
-      return buildingBlocksImage1;
-    } else if (imageSrc === "/assets/2e33ec73e85aa70d7b09e8abc1de64a16f99ab4f.png") {
-      return buildingBlocksImage2;
-    } else if (imageSrc === "/assets/a6fb1e856aadcd6cdc1bc54b33c06ab2f2ae0f6e.png") {
-      return buildingBlocksImage3;
-    } else if (imageSrc === "/assets/b0b00d4f43612fe8a2fdc4ca04c9ffc4e1f6a5c7.png") {
-      return buildingBlocksImage4;
-    }
-    return imageSrc;
-  };
-
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl text-gray-900 mb-4">Project not found</h1>
-          <button
-            onClick={() => navigate("/")}
-            className="text-blue-600 hover:text-blue-700 transition-colors"
-          >
+          <button onClick={() => navigate("/")} className="text-blue-600 hover:text-blue-700 transition-colors">
             Return to home
           </button>
         </div>
@@ -103,21 +79,14 @@ export function BuildingBlocks() {
           onClick={() => navigate("/")}
           className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors group"
         >
-          <ArrowLeft
-            size={20}
-            className="group-hover:-translate-x-1 transition-transform"
-          />
+          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
           Back to Home
         </motion.button>
       </div>
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="flex flex-wrap gap-6 text-sm text-gray-600 mb-6">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
@@ -148,9 +117,7 @@ export function BuildingBlocks() {
             </div>
           </div>
 
-          <h1 className="text-4xl lg:text-6xl text-gray-900 mb-6 font-[Actor]">
-            {project.title}
-          </h1>
+          <h1 className="text-4xl lg:text-6xl text-gray-900 mb-6 font-[Actor]">{project.title}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mb-8">
             It all began with a vision. What if engineers could approach infrastructure and construction planning the way UI designers work with Design Systems — drawing from a rich, predefined library of 3D BIM elements to bring their projects to life with consistency, efficiency, and precision?
           </p>
@@ -160,11 +127,7 @@ export function BuildingBlocks() {
       {/* Video Player */}
       {project.videoUrl && (
         <section className="max-w-5xl mx-auto px-6 lg:px-12 mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
             <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
               <iframe
                 width="100%"
@@ -183,23 +146,15 @@ export function BuildingBlocks() {
 
       {/* Design Concept and Design Validation Section */}
       <section ref={sectionRef} className="max-w-5xl mx-auto px-6 lg:px-12 mb-16 relative">
-        <h2 className="text-3xl lg:text-4xl text-gray-900 mb-8 font-[Actor]">
-          Design Concept and Design Validation
-        </h2>
+        <h2 className="text-3xl lg:text-4xl text-gray-900 mb-8 font-[Actor]">Design Concept and Design Validation</h2>
         <motion.div
           initial={false}
-          animate={{
-            maxHeight: isValidationExpanded ? "3000px" : "280px",
-          }}
+          animate={{ maxHeight: isValidationExpanded ? "3000px" : "280px" }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="overflow-hidden relative"
         >
           <div className="grid md:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <div className="flex items-center gap-3 mb-4">
                 <Palette size={24} className="text-blue-600" />
                 <h3 className="text-2xl text-gray-900 font-[Actor]">Challenges</h3>
@@ -213,20 +168,15 @@ export function BuildingBlocks() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 - A SaaS-based CMS for managing the element library and its associated datasets
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 - Native integration of library elements within the design tools used by engineers and architects — including Autodesk Revit, Civil3D, Plant3D, and more to come
               </p>
               <p className="text-gray-600 leading-relaxed">
                 - A Project Analytics Report within the SaaS platform, enabling Project Managers to monitor library element usage through a dynamic, self-compliance ranking system
-
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <div className="flex items-center gap-3 mb-4">
                 <ClipboardCheck size={24} className="text-blue-600" />
                 <h3 className="text-2xl text-gray-900 font-[Actor]">Personas & Motivations</h3>
@@ -235,37 +185,28 @@ export function BuildingBlocks() {
                 While all personas operate within the same workflow, each is driven by a distinct set of goals and incentives:
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                1. Library Owner (Client-side) — Motivated by the vision of a single source of truth, the Library Owner aims to consolidate all technical and procurement requirements within the design assets themselves — creating a living resource that can be easily shared and updated with engineering teams.
+                1. Library Owner (Client-side) — Motivated by the vision of a single source of truth, the Library Owner aims to consolidate all technical and procurement requirements within the design assets themselves.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
                 2. Project Manager (Client-side) — Focused on project compliance, the Project Manager is motivated to ensure that engineering and planning teams actively adopt library elements, aligning their work with the required standards and specifications.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                3. These are the hands-on users of the workflow, planning professionals who traditionally rely on their own design assets while manually interpreting standards documents and specifications. Their motivation is to achieve the required compliance with standards and requirements more quickly and with less friction.
+                3. Planning professionals who traditionally rely on their own design assets while manually interpreting standards documents. Their motivation is to achieve the required compliance with standards and requirements more quickly and with less friction.
               </p>
             </motion.div>
           </div>
-          
+
           {!isValidationExpanded && (
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
           )}
         </motion.div>
 
         <div className="flex justify-center mt-6">
-          <button
-            onClick={handleToggle}
-            className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors font-medium"
-          >
+          <button onClick={handleToggle} className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors font-medium">
             {isValidationExpanded ? (
-              <>
-                <ChevronUp size={20} />
-                Collapse
-              </>
+              <><ChevronUp size={20} /> Collapse</>
             ) : (
-              <>
-                <ChevronDown size={20} />
-                Expand to read all
-              </>
+              <><ChevronDown size={20} /> Expand to read all</>
             )}
           </button>
         </div>
@@ -280,11 +221,11 @@ export function BuildingBlocks() {
           className="carousel-container"
         >
           <Slider {...sliderSettings}>
-            {project.images.map((image, index) => (
+            {sliderImages.map((image, index) => (
               <div key={index} className="outline-none">
                 <div className="aspect-video rounded-2xl overflow-hidden mx-2">
                   <ImageWithFallback
-                    src={getImageSrc(image)}
+                    src={image}
                     alt={`${project.title} - Image ${index + 1}`}
                     className="w-full h-full object-contain"
                   />
@@ -293,53 +234,6 @@ export function BuildingBlocks() {
             ))}
           </Slider>
         </motion.div>
-      </section>
-
-      {/* Project Content */}
-      <section className="max-w-5xl mx-auto px-6 lg:px-12 mb-16">
-        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-12"
-          >
-            <div>
-              <h3 className="text-2xl text-gray-900 mb-4 font-[Actor]">Overview</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {project.content.overview}
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl text-gray-900 mb-4 font-[Actor]">Research</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {project.content.research}
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-12"
-          >
-            <div>
-              <h3 className="text-2xl text-gray-900 mb-4 font-[Actor]">Design</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {project.content.design}
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl text-gray-900 mb-4 font-[Actor]">Outcome</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                {project.content.outcome}
-              </p>
-            </div>
-          </motion.div>
-        </div>
       </section>
 
       {/* Challenge & Solution */}
@@ -372,62 +266,7 @@ export function BuildingBlocks() {
         </div>
       </section>
 
-      {/* Results */}
-      <section className="max-w-5xl mx-auto px-6 lg:px-12 mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl lg:text-4xl text-gray-900 mb-8 font-[Actor]">
-            Results & Impact
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {project.results.map((result, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl"
-              >
-                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm">
-                  <span className="text-2xl">
-                    {index === 0 ? "📈" : index === 1 ? "⭐" : "✅"}
-                  </span>
-                </div>
-                <p className="text-gray-900">{result}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Tags */}
-      <section className="max-w-5xl mx-auto px-6 lg:px-12 mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-xl text-gray-900 mb-4 font-[Actor]">Technologies & Methods</h3>
-          <div className="flex flex-wrap gap-3">
-            {project.tags.map((tag) => (
-              <motion.span
-                key={tag}
-                whileHover={{ scale: 1.05 }}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors cursor-default"
-              >
-                {tag}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Next Project */}
+      {/* CTA */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -435,8 +274,6 @@ export function BuildingBlocks() {
           viewport={{ once: true }}
           className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-12 text-center text-white"
         >
-          
-          
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
