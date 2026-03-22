@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { motion } from "motion/react";
-import { ArrowLeft, Play, Users, Clock, Building2, Sparkles, Eye, Target, Palette, ClipboardCheck, ChevronDown, ChevronUp, CheckCircle2, BadgeCheck } from "lucide-react";
+import { ArrowLeft, Play, Users, Clock, Building2, Sparkles, Eye, Target, Pencil, ClipboardCheck, ChevronDown, ChevronUp, CheckCircle2, BadgeCheck } from "lucide-react";
 import { projects } from "../../data/projects";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import Slider from "react-slick";
@@ -263,7 +263,7 @@ export function MobileBankingRedesign() {
       {/* Overview - Full Width */}
       <section ref={sectionRef} className="max-w-5xl mx-auto px-6 lg:px-12 mb-16 relative">
         <h2 className="text-3xl lg:text-4xl text-gray-900 mb-8 font-[Actor]">
-          Design Concept and Design Validation
+          Design Concept and Validation
         </h2>
         <motion.div
           initial={false}
@@ -280,7 +280,7 @@ export function MobileBankingRedesign() {
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <Palette size={24} className="text-blue-600" />
+                <Pencil size={24} className="text-blue-600" />
                 <h3 className="text-2xl text-gray-900 font-[Actor]">Design Concept</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
@@ -398,8 +398,8 @@ export function MobileBankingRedesign() {
               transition={{ duration: 0.3 }}
               className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all"
             >
-              <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl mb-6 shadow-lg">
-                <CheckCircle2 size={48} className="text-white" strokeWidth={2.5} />
+              <div className="flex items-center justify-center w-20 h-20 bg-orange-50 rounded-2xl mb-6">
+                <CheckCircle2 size={40} className="text-orange-500" strokeWidth={1.5} />
               </div>
               <h3 className="text-3xl text-gray-900 mb-6 font-[Actor]">1st Iteration</h3>
               <p className="text-xl text-gray-700 leading-relaxed">
@@ -418,8 +418,8 @@ export function MobileBankingRedesign() {
               whileHover={{ y: -8, scale: 1.02 }}
               className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all"
             >
-              <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl mb-6 shadow-lg">
-                <BadgeCheck size={48} className="text-white" strokeWidth={2.5} />
+              <div className="flex items-center justify-center w-20 h-20 bg-green-50 rounded-2xl mb-6">
+                <BadgeCheck size={40} className="text-green-600" strokeWidth={1.5} />
               </div>
               <h3 className="text-3xl text-gray-900 mb-6 font-[Actor]">2nd Iteration</h3>
               <p className="text-xl text-gray-700 leading-relaxed">

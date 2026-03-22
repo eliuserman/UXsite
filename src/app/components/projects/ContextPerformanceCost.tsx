@@ -201,8 +201,8 @@ export function ContextPerformanceCost() {
             {/* Problems */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <div className="flex items-center gap-3 mb-4">
-                <Target size={24} className="text-slate-600" />
-                <h3 className="text-2xl text-gray-900 font-[Actor]">Problems</h3>
+                <Target size={24} className="text-pink-500" />
+                <h3 className="text-2xl text-gray-900 font-[Actor]">Challenges</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
                 During the development phase, and with first users' interations (Mekorot's pilot testing team), we identified two major challenges associated with working with a large dataset (500+ documents), which we defined as key KPIs:
@@ -314,18 +314,18 @@ export function ContextPerformanceCost() {
           <div className="grid lg:grid-cols-3 gap-8">
             {[
               {
-                icon: <Rocket size={48} className="text-white" strokeWidth={2.5} />,
-                gradient: "from-orange-400 to-orange-600",
+                icon: <Rocket size={40} className="text-orange-500" strokeWidth={1.5} />,
+                bg: "bg-orange-50",
                 text: <>Reducing the <strong className="font-bold text-gray-900">Time</strong> to an average of <strong className="font-bold text-gray-900">6 sec</strong> /response</>,
               },
               {
-                icon: <ThumbsUp size={48} className="text-white" strokeWidth={2.5} />,
-                gradient: "from-blue-500 to-blue-700",
+                icon: <ThumbsUp size={40} className="text-blue-600" strokeWidth={1.5} />,
+                bg: "bg-blue-50",
                 text: <>Responses' <strong className="font-bold text-gray-900">Quality</strong> increased by an average rank of <strong className="font-bold text-gray-900">30%</strong></>,
               },
               {
-                icon: <TrendingDown size={48} className="text-white" strokeWidth={2.5} />,
-                gradient: "from-green-500 to-emerald-600",
+                icon: <TrendingDown size={40} className="text-green-600" strokeWidth={1.5} />,
+                bg: "bg-green-50",
                 text: <>LLM models' <strong className="font-bold text-gray-900">Cost</strong> reduced by an average of <strong className="font-bold text-gray-900">35%</strong></>,
               },
             ].map((item, index) => (
@@ -338,7 +338,7 @@ export function ContextPerformanceCost() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all"
               >
-                <div className={`flex items-center justify-center w-20 h-20 bg-gradient-to-br ${item.gradient} rounded-2xl mb-6 shadow-lg`}>
+                <div className={`flex items-center justify-center w-20 h-20 ${item.bg} rounded-2xl mb-6`}>
                   {item.icon}
                 </div>
                 <p className="text-xl text-gray-700 leading-relaxed">{item.text}</p>

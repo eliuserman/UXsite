@@ -251,8 +251,8 @@ export function BuildingBlocks() {
               transition={{ duration: 0.3 }}
               className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all"
             >
-              <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl mb-6 shadow-lg">
-                <Rocket size={48} className="text-white" strokeWidth={2.5} />
+              <div className="flex items-center justify-center w-20 h-20 bg-orange-50 rounded-2xl mb-6">
+                <Rocket size={40} className="text-orange-500" strokeWidth={1.5} />
               </div>
               <p className="text-xl text-gray-700 leading-relaxed">
                 Active within more than <strong className="font-bold text-gray-900">100 projects</strong> during 2026
@@ -267,8 +267,8 @@ export function BuildingBlocks() {
               whileHover={{ y: -8, scale: 1.02 }}
               className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all"
             >
-              <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl mb-6 shadow-lg">
-                <ThumbsUp size={48} className="text-white" strokeWidth={2.5} />
+              <div className="flex items-center justify-center w-20 h-20 bg-green-50 rounded-2xl mb-6">
+                <ThumbsUp size={40} className="text-green-600" strokeWidth={1.5} />
               </div>
               <p className="text-xl text-gray-700 leading-relaxed">
                 Now onboarding 2 new major enterprises
