@@ -257,9 +257,9 @@ export function Home() {
                         <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-shadow">
                           <img
                             src={
-                              project.id === 'mobile-banking-redesign' ? bankingAppImage :
-                              project.id === 'ecommerce-optimization' ? amdocsAppImage :
-                              project.id === 'new-project-3' ? newProjectImage :
+                              project.id === 'connecting-visual-text-data' ? bankingAppImage :
+                              project.id === 'im-free-again' ? amdocsAppImage :
+                              project.id === 'context-performance-cost' ? newProjectImage :
                               project.id === 'building-blocks' ? buildingBlocksImage :
                               project.thumbnail
                             }
