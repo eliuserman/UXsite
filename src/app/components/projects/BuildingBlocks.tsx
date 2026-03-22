@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
-import { ArrowLeft, Users, Building2, Sparkles, Palette, ClipboardCheck, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowLeft, Users, Building2, Sparkles, Target, UserCheck, ChevronDown, ChevronUp, Rocket, ThumbsUp } from "lucide-react";
 import { projects } from "../../data/projects";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import Slider from "react-slick";
@@ -146,7 +146,7 @@ export function BuildingBlocks() {
 
       {/* Design Concept and Design Validation Section */}
       <section ref={sectionRef} className="max-w-5xl mx-auto px-6 lg:px-12 mb-16 relative">
-        <h2 className="text-3xl lg:text-4xl text-gray-900 mb-8 font-[Actor]">Design Concept and Design Validation</h2>
+        <h2 className="text-3xl lg:text-4xl text-gray-900 mb-8 font-[Actor]">Research Highlights</h2>
         <motion.div
           initial={false}
           animate={{ maxHeight: isValidationExpanded ? "3000px" : "280px" }}
@@ -156,7 +156,7 @@ export function BuildingBlocks() {
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <div className="flex items-center gap-3 mb-4">
-                <Palette size={24} className="text-blue-600" />
+                <Target size={24} className="text-purple-600" />
                 <h3 className="text-2xl text-gray-900 font-[Actor]">Challenges</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
@@ -178,7 +178,7 @@ export function BuildingBlocks() {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <div className="flex items-center gap-3 mb-4">
-                <ClipboardCheck size={24} className="text-blue-600" />
+                <UserCheck size={24} className="text-blue-600" />
                 <h3 className="text-2xl text-gray-900 font-[Actor]">Personas & Motivations</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-6">
@@ -236,19 +236,27 @@ export function BuildingBlocks() {
         </motion.div>
       </section>
 
-      {/* Challenge & Solution */}
-      <section className="bg-gray-50 py-16 mb-16">
+      {/* Design Validation Results */}
+      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50 py-20 mb-16">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
+          <h2 className="text-3xl lg:text-4xl text-gray-900 mb-12 font-[Actor] text-center">
+            Results
+          </h2>
           <div className="grid lg:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-2xl shadow-sm"
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all"
             >
-              <div className="text-4xl mb-4">🎯</div>
-              <h3 className="text-2xl text-gray-900 mb-4 font-[Actor]">The Challenge</h3>
-              <p className="text-gray-600 leading-relaxed">{project.challenge}</p>
+              <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl mb-6 shadow-lg">
+                <Rocket size={48} className="text-white" strokeWidth={2.5} />
+              </div>
+              <p className="text-xl text-gray-700 leading-relaxed">
+                Active within more than <strong className="font-bold text-gray-900">100 projects</strong> during 2026
+              </p>
             </motion.div>
 
             <motion.div
@@ -256,11 +264,15 @@ export function BuildingBlocks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white p-8 rounded-2xl shadow-sm"
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all"
             >
-              <div className="text-4xl mb-4">💡</div>
-              <h3 className="text-2xl text-gray-900 mb-4 font-[Actor]">The Solution</h3>
-              <p className="text-gray-600 leading-relaxed">{project.solution}</p>
+              <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl mb-6 shadow-lg">
+                <ThumbsUp size={48} className="text-white" strokeWidth={2.5} />
+              </div>
+              <p className="text-xl text-gray-700 leading-relaxed">
+                Now onboarding 2 new major enterprises
+              </p>
             </motion.div>
           </div>
         </div>
