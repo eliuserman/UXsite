@@ -6,6 +6,7 @@ import { MobileBankingRedesign } from "./components/projects/MobileBankingRedesi
 import { EcommerceOptimization } from "./components/projects/EcommerceOptimization";
 import { ContextPerformanceCost } from "./components/projects/ContextPerformanceCost";
 import { BuildingBlocks } from "./components/projects/BuildingBlocks";
+import { VodafoneRomania } from "./components/projects/VodafoneRomania";
 
 const routes: RouteObject[] = [
   {
@@ -31,6 +32,10 @@ const routes: RouteObject[] = [
       {
         path: "project/building-blocks",
         Component: BuildingBlocks
+      },
+      {
+        path: "project/vodafone-romania",
+        Component: VodafoneRomania
       },
       {
         path: "*",

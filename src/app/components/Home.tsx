@@ -9,6 +9,7 @@ import bankingAppImage from "@/assets/7f87584dfef486bea3c284234f73498dd67c9819.p
 import amdocsAppImage from "@/assets/e83de090439b1fe19ad9a605c2c9b56d4e58c631.png";
 import newProjectImage from "@/assets/42c626e673f3c01200577fa14bd31c5dcfd49e82.png";
 import buildingBlocksImage from "@/assets/b216ba02fe20ef316352409d4bfc53b041db7e08.png";
+import vfroThumbnail from "@/assets/vfro_app1.png";
 
 function AnimatedCounter({ end, duration = 2, display }: { end: number; duration?: number; display?: string }) {
   const [count, setCount] = useState(0);
@@ -261,6 +262,7 @@ export function Home() {
                               project.id === 'im-free-again' ? amdocsAppImage :
                               project.id === 'context-performance-cost' ? newProjectImage :
                               project.id === 'building-blocks' ? buildingBlocksImage :
+                              project.id === 'vodafone-romania' ? vfroThumbnail :
                               project.thumbnail
                             }
                             alt={project.title}
