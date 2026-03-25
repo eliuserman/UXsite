@@ -155,20 +155,10 @@ export function Home() {
                   className="w-full h-full object-cover object-top scale-110"
                 />
               </div>
-              <motion.div
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 90, 0]
-                }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              <div
                 className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-60"
               />
-              <motion.div
-                animate={{ 
-                  scale: [1.2, 1, 1.2],
-                  rotate: [90, 0, 90]
-                }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              <div
                 className="absolute -top-6 -left-6 w-32 h-32 bg-purple-100 rounded-full blur-3xl opacity-60"
               />
             </motion.div>
@@ -176,20 +166,10 @@ export function Home() {
         </div>
 
         {/* Floating Elements */}
-        <motion.div
-          animate={{ 
-            y: [0, -20, 0],
-            x: [0, 10, 0]
-          }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        <div
           className="absolute top-1/4 right-1/4 w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-400 rounded-2xl opacity-20 blur-sm"
         />
-        <motion.div
-          animate={{ 
-            y: [0, 20, 0],
-            x: [0, -10, 0]
-          }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        <div
           className="absolute bottom-1/3 left-1/4 w-24 h-24 bg-gradient-to-br from-pink-400 to-orange-400 rounded-full opacity-20 blur-sm"
         />
       </section>
@@ -271,12 +251,7 @@ export function Home() {
                         </div>
                         
                         {/* Floating decoration */}
-                        <motion.div
-                          animate={{ 
-                            y: [0, -10, 0],
-                            rotate: [0, 5, 0]
-                          }}
-                          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                        <div
                           className={`absolute ${index % 2 === 0 ? '-right-4 -bottom-4' : '-left-4 -top-4'} w-24 h-24 bg-gradient-to-br from-blue-200 to-purple-200 rounded-3xl opacity-50 -z-10 blur-sm`}
                         />
                       </div>
@@ -377,22 +352,8 @@ export function Home() {
             className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-12 lg:p-16 text-white overflow-hidden"
           >
             {/* Animated background elements */}
-            <motion.div
-              animate={{ 
-                scale: [1, 1.2, 1],
-                rotate: [0, 180, 360]
-              }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"
-            />
-            <motion.div
-              animate={{ 
-                scale: [1.2, 1, 1.2],
-                rotate: [360, 180, 0]
-              }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"
-            />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
             
             <div className="relative z-10">
               {/* Header */}
