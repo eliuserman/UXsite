@@ -2,10 +2,11 @@ import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowLeft, Building2, Sparkles, Users, Building, Zap, RefreshCw, Briefcase, XCircle, Frown, Trash2, CheckCircle, Layers, ThumbsUp } from "lucide-react";
-import vfroExcited from "@/assets/vfro_excited.jpg";
-import vfroPuzzled from "@/assets/vfro_puzzled.jpg";
-import vfroStressed from "@/assets/vfro_stressed.jpg";
-import vfroImpact from "@/assets/vfro_impact.jpg";
+import vfroExcited from "@/assets/vfro_excited.png";
+import vfroPuzzled from "@/assets/vfro_puzzled.png";
+import vfroStressed from "@/assets/vfro_stressed.png";
+import vfroImpact from "@/assets/vfro_impact.png";
+import vfroSuccess from "@/assets/vfro_success.png";
 import vfroOob from "@/assets/vfro_oob.png";
 import vfroApp1 from "@/assets/vfro_app1.png";
 import vfroApp2 from "@/assets/vfro_app2.png";
@@ -114,6 +115,8 @@ const stations = [
     color: "green",
     title: "It's a success!",
     body: "The delivered mockups created satisfaction all the way to the highest management levels, and significantly increased Vodafone Romania's confidence in Amdocs as their digital partner.",
+    photo: vfroSuccess,
+    photoAlt: "Eli — celebrating success",
     appImages: [vfroApp2, vfroApp3],
     quote: "XDC team delivered high-quality mock-ups which created customer satisfaction of the solution (till highest management levels) and increased their confidence in their selection of Amdocs as their partner to fulfill their Digital roadmap.",
     quoteAuthor: "Dror Lichtemberg, VFRO Service Partner",

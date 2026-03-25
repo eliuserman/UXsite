@@ -4,11 +4,11 @@ import { Link } from "react-router";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { projects } from "../data/projects";
 import { useRef, useState, useEffect } from "react";
-import avatarImage from "@/assets/1b644bc2c92dd5ba6e42f009748cf3932bbb1018.png";
+import avatarImage from "@/assets/avatar-animated.gif";
 import bankingAppImage from "@/assets/7f87584dfef486bea3c284234f73498dd67c9819.png";
-import amdocsAppImage from "@/assets/e83de090439b1fe19ad9a605c2c9b56d4e58c631.png";
+import amdocsAppImage from "@/assets/im_free_again_hero.png";
 import newProjectImage from "@/assets/42c626e673f3c01200577fa14bd31c5dcfd49e82.png";
-import buildingBlocksImage from "@/assets/b216ba02fe20ef316352409d4bfc53b041db7e08.png";
+import buildingBlocksImage from "@/assets/building_blocks_hero.png";
 import vfroThumbnail from "@/assets/vfro_app1.png";
 
 function AnimatedCounter({ end, duration = 2, display }: { end: number; duration?: number; display?: string }) {
@@ -148,11 +148,11 @@ export function Home() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="relative"
             >
-              <div className="relative aspect-square rounded-full overflow-hidden shadow-2xl w-3/4 mx-auto">
-                <ImageWithFallback
+              <div className="relative aspect-square rounded-full overflow-hidden shadow-2xl w-2/3 mx-auto">
+                <img
                   src={avatarImage}
                   alt="UX Designer Portrait"
-                  className="w-full h-full object-cover rounded-full"
+                  className="w-full h-full object-cover object-top scale-110"
                 />
               </div>
               <motion.div
@@ -524,17 +524,17 @@ export function Home() {
               <h3 className="text-2xl text-gray-900 mb-6">Design Skills</h3>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { skill: "Product Discovery, Research, Workshops", level: 95 },
-                  { skill: "User testing", level: 90 },
-                  { skill: "Data-Driven Design", level: 92 },
-                  { skill: "Complex Systems UX", level: 88 },
-                  { skill: "Information Architecture", level: 90 },
-                  { skill: "Design Systems", level: 87 },
-                  { skill: "UI Design", level: 93 },
-                  { skill: "Collaboration with Dev teams", level: 94 },
-                  { skill: "Cross-functional Leadership", level: 89 },
-                  { skill: "Stakeholder Management", level: 91 },
-                  { skill: "Figma & Prototyping", level: 96 },
+                  { skill: "Product Discovery, Research, Workshops" },
+                  { skill: "User testing" },
+                  { skill: "Data-Driven Design" },
+                  { skill: "Complex Systems UX" },
+                  { skill: "Information Architecture" },
+                  { skill: "Design Systems" },
+                  { skill: "UI Design" },
+                  { skill: "Collaboration with Dev teams" },
+                  { skill: "Cross-functional Leadership" },
+                  { skill: "Stakeholder Management" },
+                  { skill: "Figma & Prototyping" },
                 ].map((item, index) => (
                   <motion.div
                     key={item.skill}
@@ -545,49 +545,9 @@ export function Home() {
                     whileHover={{ scale: 1.05 }}
                     className="px-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-default flex items-center gap-3"
                   >
-                    <div className="flex-shrink-0">
-                      <svg className="w-10 h-10 transform -rotate-90" viewBox="0 0 36 36">
-                        {/* Background circle */}
-                        <circle
-                          cx="18"
-                          cy="18"
-                          r="15.5"
-                          fill="none"
-                          stroke="#e5e7eb"
-                          strokeWidth="3"
-                        />
-                        {/* Animated progress circle */}
-                        <motion.circle
-                          cx="18"
-                          cy="18"
-                          r="15.5"
-                          fill="none"
-                          stroke="url(#gradient)"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          initial={{ strokeDasharray: "0 100" }}
-                          whileInView={{ strokeDasharray: `${item.level} 100` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, ease: "easeOut" }}
-                        />
-                        {/* Gradient definition */}
-                        <defs>
-                          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#3b82f6" />
-                            <stop offset="100%" stopColor="#8b5cf6" />
-                          </linearGradient>
-                        </defs>
-                        {/* Percentage text */}
-                        <text
-                          x="18"
-                          y="18"
-                          textAnchor="middle"
-                          dy="0.3em"
-                          className="text-[8px] fill-gray-700"
-                          transform="rotate(90 18 18)"
-                        >
-                          {item.level}%
-                        </text>
+                    <div className="flex-shrink-0 w-6 h-6 bg-blue-50 rounded-full flex items-center justify-center">
+                      <svg className="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <span className="text-gray-700 text-sm">{item.skill}</span>
@@ -606,43 +566,35 @@ export function Home() {
               <h3 className="text-2xl text-gray-900 mb-6">Tools & Tech</h3>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  "Figma",
-                  "Sketch",
-                  "Photoshop",
-                  "After Effects",
-                  "3D MAX",
-                  "Axure",
-                  "Miro",
-                  "Claude",
-                  "Antigravity",
-                  "CSS",
-                  "LLM",
-                  "Graph RAG",
-                  "BIM",
+                  { name: "Figma",         logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/figma.svg",              bg: "#F24E1E" },
+                  { name: "Sketch",        logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/sketch.svg",             bg: "#F7B500" },
+                  { name: "Photoshop",     logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobephotoshop.svg",     bg: "#31A8FF" },
+                  { name: "After Effects", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobeaftereffects.svg",  bg: "#9999FF" },
+                  { name: "3D MAX",        logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/autodesk.svg",           bg: "#0696D7" },
+                  { name: "Axure",         logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/axure.svg",              bg: "#00AEF0" },
+                  { name: "Miro",          logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/miro.svg",               bg: "#FFD02F" },
+                  { name: "Claude / AI",   logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/anthropic.svg",          bg: "#D4966A" },
+                  { name: "CSS",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/css3.svg",               bg: "#1572B6" },
+                  { name: "Graph RAG",     logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/neo4j.svg",              bg: "#008CC1" },
+                  { name: "BIM / Revit",   logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/autodesk.svg",           bg: "#0696D7" },
+                  { name: "LLM",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg",             bg: "#412991" },
                 ].map((tool, index) => (
                   <motion.div
-                    key={tool}
+                    key={tool.name}
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                     whileHover={{ scale: 1.05 }}
-                    className="px-4 py-3 bg-gray-50 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors cursor-default flex items-center gap-2"
+                    className="px-4 py-3 bg-gray-50 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors cursor-default flex items-center gap-3"
                   >
-                    <svg
-                      className="w-4 h-4 text-blue-600 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    <div
+                      className="w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: tool.bg }}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={3}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>{tool}</span>
+                      <img src={tool.logo} alt={tool.name} className="w-4 h-4" style={{ filter: "brightness(0) invert(1)" }} />
+                    </div>
+                    <span className="text-sm">{tool.name}</span>
                   </motion.div>
                 ))}
               </div>
