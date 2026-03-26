@@ -111,7 +111,7 @@ export function Footer() {
             © {currentYear} Eli Wasserman. All rights reserved.
           </p>
           <p className="text-sm text-gray-600 flex items-center gap-1">
-            Co-design: Eli Wasserman & Figma Make <Heart size={14} className="text-red-500 fill-red-500" />
+            Co-crafted: Eli Wasserman & Claude <Heart size={14} className="text-red-500 fill-red-500" />
           </p>
         </div>
       </div>

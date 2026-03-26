@@ -153,6 +153,7 @@ export function Home() {
                   src={avatarImage}
                   alt="UX Designer Portrait"
                   className="w-full h-full object-cover object-top scale-110"
+                  style={{ marginTop: "15px" }}
                 />
               </div>
               <div
