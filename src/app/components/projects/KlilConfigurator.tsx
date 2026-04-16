@@ -159,7 +159,7 @@ export function KlilConfigurator() {
           <div
             ref={canvasRef}
             className={`relative w-full overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 ${dragging ? "cursor-grabbing" : "cursor-grab"}`}
-            style={{ height: "480px" }}
+            style={{ height: "576px" }}
             onMouseDown={onMouseDown}
             onMouseMove={onMouseMove}
             onMouseUp={onMouseUp}
