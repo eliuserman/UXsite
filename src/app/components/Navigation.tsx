@@ -6,6 +6,7 @@ import { useNavigate, useLocation, Link } from "react-router";
 const projects = [
   { id: "connecting-visual-text-data", label: "Connecting visual and text data" },
   { id: "im-free-again", label: "I'm free again! (parents only...)" },
+  { id: "klil-configurator", label: "Create your window" },
   { id: "context-performance-cost", label: "Context in the service of performance & cost" },
   { id: "building-blocks", label: "Building blocks" },
   { id: "vodafone-romania", label: "Vodafone Romania Retail App" },
@@ -96,22 +97,22 @@ export function Navigation() {
               <AnimatePresence>
                 {projectsOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8, scale: 0.97 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 8, scale: 0.97 }}
-                    transition={{ duration: 0.15, ease: "easeOut" }}
-                    className="absolute top-full right-0 mt-3 w-72 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-gray-100 overflow-hidden"
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.12, ease: "easeOut" }}
+                    className="absolute top-full right-0 mt-3 w-72 bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
                   >
                     <div className="p-2">
-                      {projects.map((project, index) => (
+                      {projects.map((project) => (
                         <Link
                           key={project.id}
                           to={`/project/${project.id}`}
                           onClick={() => setProjectsOpen(false)}
-                          className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors group"
+                          className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0 group-hover:bg-blue-600 transition-colors" />
-                          <span className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors leading-tight">
+                          <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                          <span className="text-sm text-gray-700 leading-tight">
                             {project.label}
                           </span>
                         </Link>

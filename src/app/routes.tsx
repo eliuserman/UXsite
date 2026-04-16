@@ -4,6 +4,7 @@ import { Root } from "./components/Root";
 import { Home } from "./components/Home";
 import { MobileBankingRedesign } from "./components/projects/MobileBankingRedesign";
 import { EcommerceOptimization } from "./components/projects/EcommerceOptimization";
+import { KlilConfigurator } from "./components/projects/KlilConfigurator";
 import { ContextPerformanceCost } from "./components/projects/ContextPerformanceCost";
 import { BuildingBlocks } from "./components/projects/BuildingBlocks";
 import { VodafoneRomania } from "./components/projects/VodafoneRomania";
@@ -24,6 +25,10 @@ const routes: RouteObject[] = [
       {
         path: "project/im-free-again",
         Component: EcommerceOptimization
+      },
+      {
+        path: "project/klil-configurator",
+        Component: KlilConfigurator
       },
       {
         path: "project/context-performance-cost",

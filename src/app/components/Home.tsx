@@ -1,15 +1,21 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Sparkles, ArrowUpRight, Award, Users, Briefcase, GraduationCap, Mail, Linkedin, Github, Twitter, Send, MapPin } from "lucide-react";
+import { ArrowRight, Sparkles, ArrowUpRight, Mail, Linkedin, MapPin, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { projects } from "../data/projects";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import avatarImage from "@/assets/avatar-animated.gif";
 import bankingAppImage from "@/assets/7f87584dfef486bea3c284234f73498dd67c9819.png";
 import amdocsAppImage from "@/assets/im_free_again_hero.png";
 import newProjectImage from "@/assets/42c626e673f3c01200577fa14bd31c5dcfd49e82.png";
 import buildingBlocksImage from "@/assets/building_blocks_hero.png";
 import vfroThumbnail from "@/assets/vfro_app1.png";
+import klilThumbnail from "@/assets/klil_sc.png";
+import recZvika from "@/assets/rec_zvika.png";
+import recAmir from "@/assets/rec_amir.png";
+import recOfir from "@/assets/rec_ofir.png";
+import recTomer from "@/assets/rec_tomer.png";
+import recDavid from "@/assets/rec_david.png";
 
 function AnimatedCounter({ end, duration = 2, display }: { end: number; duration?: number; display?: string }) {
   const [count, setCount] = useState(0);
@@ -48,6 +54,131 @@ function AnimatedCounter({ end, duration = 2, display }: { end: number; duration
   }
 
   return <div ref={ref}>{count}+</div>;
+}
+
+const recommendations = [
+  {
+    name: "Zvika Guy",
+    title: "Product Design Leadership",
+    photo: recZvika,
+    text: "Over the last 2 years, I have had the pleasure of working closely with Eli Wasserman. Eli has proven to be an excellent usability expert, with impressive communication skills to present and deliver product solutions to Amdocs customers. His strong advocacy for his clients broadened our perspective and helped push through important product features. Eli is a real team player, yet his leadership skills show up when needed, helping him drive and achieve product goals. I hope to keep working with Eli for many more years.",
+  },
+  {
+    name: "Amir Perlson",
+    title: "CEO at BrothersKeep",
+    photo: recAmir,
+    text: "Eli has been our UX/UI designer since we first started building our web app. He has helped give shape to our ideas before we had a clear picture ourselves, and his advice has been very helpful on multiple fronts. Eli has been extremely responsive and quick to find solutions. I look forward to continuing working with Eli and am very happy to recommend him to others.",
+  },
+  {
+    name: "Ofir Ovadia",
+    title: "Building Scalable AI & Data Systems",
+    photo: recOfir,
+    text: "During the last couple of years, I've worked with Eli on various web and mobile projects, including Fitblok. I led the technological teams behind those projects, while Eli led the design and UX. Eli showed high skills in understanding both the visual and UX needs, as well as the technical requirements of the products. Eli proved time and again that he can come up with solutions for every difficult or unusual requirement by the client, and deal with any limitation — all without compromising the user experience and visual appeal of the product. On a personal note, Eli is a pleasure to work with. He knows all the technical terms, and I look forward to our next collaboration.",
+  },
+  {
+    name: "Tomer Saban",
+    title: "Co-Founder & CEO",
+    photo: recTomer,
+    text: "WireX hired Eli to design our new innovative and revolutionary network intelligence solutions. Following high availability and engagement, Eli delivered high-quality UX and visual graphics services, which smartly aligned with our requirements. We strongly recommend him for any UX and graphic services.",
+  },
+  {
+    name: "David Perez",
+    title: "Owner @ Deep Consulting / VisionFlow",
+    photo: recDavid,
+    text: "WireX hired Eli for the design of our new website. In the result you can clearly see the minimalistic style of Eli's work — 'Less is More.' We appreciate his taste and choice of objects, colors, and designs to represent our line of business. Eli guided us through the many iterations and decision points with wise recommendations and thoughtful UI considerations. We strongly recommend working with Eli on any graphic or web design project.",
+  },
+];
+
+function RecommendationsSlider() {
+  const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const next = useCallback(() => {
+    setCurrent((c) => (c + 1) % recommendations.length);
+  }, []);
+
+  const prev = useCallback(() => {
+    setCurrent((c) => (c - 1 + recommendations.length) % recommendations.length);
+  }, []);
+
+  useEffect(() => {
+    if (!isHovered) {
+      intervalRef.current = setInterval(next, 4000);
+    }
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+  }, [isHovered, next]);
+
+  const rec = recommendations[current];
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Slide */}
+      <motion.div
+        key={current}
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -30 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="bg-gray-50 rounded-3xl p-8 lg:p-12"
+      >
+        <div className="max-w-3xl mx-auto">
+          {/* Quote icon */}
+          <Quote size={32} className="text-blue-200 mb-6" strokeWidth={1.5} />
+
+          {/* Text */}
+          <p className="text-gray-700 text-lg leading-relaxed mb-8 italic">
+            "{rec.text}"
+          </p>
+
+          {/* Recommender */}
+          <div className="flex items-center gap-4">
+            <img
+              src={rec.photo}
+              alt={rec.name}
+              className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-sm"
+            />
+            <div>
+              <div className="text-gray-900 font-medium">{rec.name}</div>
+              <div className="text-gray-500 text-sm">{rec.title}</div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Navigation */}
+      <div className="flex items-center justify-center gap-6 mt-8">
+        <button
+          onClick={prev}
+          className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-gray-900 hover:text-gray-900 transition-colors"
+        >
+          <ChevronLeft size={18} />
+        </button>
+
+        {/* Dots */}
+        <div className="flex gap-2">
+          {recommendations.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`rounded-full transition-all ${i === current ? "w-6 h-2 bg-gray-900" : "w-2 h-2 bg-gray-300 hover:bg-gray-400"}`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={next}
+          className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-gray-900 hover:text-gray-900 transition-colors"
+        >
+          <ChevronRight size={18} />
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export function Home() {
@@ -241,6 +372,7 @@ export function Home() {
                             src={
                               project.id === 'connecting-visual-text-data' ? bankingAppImage :
                               project.id === 'im-free-again' ? amdocsAppImage :
+                              project.id === 'klil-configurator' ? klilThumbnail :
                               project.id === 'context-performance-cost' ? newProjectImage :
                               project.id === 'building-blocks' ? buildingBlocksImage :
                               project.id === 'vodafone-romania' ? vfroThumbnail :
@@ -613,6 +745,27 @@ export function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Recommendations Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-5xl text-gray-900 mb-4 font-[Actor]">
+              In Their Own Words
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              What colleagues, clients, and partners have to say about working together.
+            </p>
+          </motion.div>
+          <RecommendationsSlider />
         </div>
       </section>
     </div>

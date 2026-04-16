@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import { motion } from "motion/react";
-import { ArrowLeft, Building2, Sparkles, Users, Building, Zap, RefreshCw, Briefcase, XCircle, Frown, Trash2, CheckCircle, Layers, ThumbsUp } from "lucide-react";
-import vfroExcited from "@/assets/vfro_excited.png";
-import vfroPuzzled from "@/assets/vfro_puzzled.png";
-import vfroStressed from "@/assets/vfro_stressed.png";
-import vfroImpact from "@/assets/vfro_impact.png";
-import vfroSuccess from "@/assets/vfro_success.png";
+import { ArrowLeft, Building2, Sparkles, Users } from "lucide-react";
+import vfroExcited from "@/assets/vfro_excited.jpg";
+import vfroPuzzled from "@/assets/vfro_puzzled.jpg";
+import vfroStressed from "@/assets/vfro_stressed.jpg";
+import vfroImpact from "@/assets/vfro_impact.jpg";
 import vfroOob from "@/assets/vfro_oob.png";
 import vfroApp1 from "@/assets/vfro_app1.png";
 import vfroApp2 from "@/assets/vfro_app2.png";
@@ -28,7 +27,7 @@ const stations = [
     phase: "The Constraint",
     color: "amber",
     title: "Mmm… wait a minute",
-    body: "Then came the brief's fine print: follow MTEL as-is and translate it to Vodafone style. No fresh thinking. No OOB. Just copy a competitor's app.",
+    body: "Then came the brief's fine print: I had been instructed to follow MTEL as-is and translate it to Vodafone style. No fresh thinking. No OOB. Just copy a competitor's app.",
     photo: vfroPuzzled,
     photoAlt: "Eli — puzzled, skeptical",
     quote: "Why MTEL and not our best OOB?",
@@ -53,11 +52,11 @@ const stations = [
     phase: "The Problem",
     color: "red",
     title: "MTEL does not fit Vodafone Romania",
-    body: "Once the design reached the Vodafone business team, it became immediately clear that MTEL was fundamentally incompatible with VFRO's actual business.",
+    body: "Once the design reached the Vodafone business team, it became immediately clear that the MTEL app was fundamentally incompatible with VFRO's actual business.",
     cards: [
-      { Icon: Building, color: "text-blue-600", bg: "bg-blue-50", title: "Different business", desc: "VFRO had a unique product structure and commercial model that MTEL never addressed" },
-      { Icon: Zap, color: "text-amber-600", bg: "bg-amber-50", title: "Other functionalities", desc: "MTEL's feature set simply didn't map to what Vodafone Romania actually needed" },
-      { Icon: RefreshCw, color: "text-purple-600", bg: "bg-purple-50", title: "Wrong flow", desc: "The user journey assumptions from MTEL didn't match VFRO's business processes at all" },
+      { icon: "🏢", title: "Different business", desc: "VFRO had a unique product structure and commercial model that MTEL never addressed" },
+      { icon: "⚡", title: "Other functionalities", desc: "MTEL's feature set simply didn't map to what Vodafone Romania actually needed" },
+      { icon: "🔄", title: "Wrong flow", desc: "The user journey assumptions from MTEL didn't match VFRO's business processes at all" },
     ],
   },
   {
@@ -67,8 +66,8 @@ const stations = [
     title: "So, why did it fail?",
     body: "Two systemic failures contributed to the rejection — both rooted in skipping the business layer entirely.",
     cards: [
-      { Icon: Briefcase, color: "text-slate-600", bg: "bg-slate-50", title: "Sell pitched to IT", desc: "The pre-sell focused on backend similarity between MTEL and VFRO — not business requirements" },
-      { Icon: XCircle, color: "text-red-500", bg: "bg-red-50", title: "No business validation", desc: "Requirements gathering with the Vodafone business team never happened before design began" },
+      { icon: "💼", title: "Sell pitched to IT", desc: "The pre-sell focused on backend similarity between MTEL and VFRO — not business requirements" },
+      { icon: "❌", title: "No business validation", desc: "Requirements gathering with the Vodafone business team never happened before design began" },
     ],
   },
   {
@@ -80,8 +79,8 @@ const stations = [
     photo: vfroImpact,
     photoAlt: "Eli — frustrated and stressed",
     cards: [
-      { Icon: Frown, color: "text-red-500", bg: "bg-red-50", title: "Frustrated client", desc: "Complaints about Amdocs' professionality for failing to understand VFRO's business" },
-      { Icon: Trash2, color: "text-gray-500", bg: "bg-gray-100", title: "Wasted work efforts", desc: "3 full work-weeks of design scrapped entirely" },
+      { icon: "😤", title: "Frustrated client", desc: "Complaints about Amdocs' professionality for failing to understand VFRO's business" },
+      { icon: "🗑️", title: "Wasted work efforts", desc: "3 full work-weeks of design scrapped entirely" },
     ],
   },
   {
@@ -89,7 +88,7 @@ const stations = [
     phase: "The Recovery",
     color: "purple",
     title: "Recovering — starting fresh with OOB",
-    body: "Reset. A week in Romania to properly understand the real business. Then back to Israel to build the right solution — this time starting from Amdocs' OOB product as the foundation.",
+    body: "Reset. A week in Romania to properly understand the real business. Then back to Israel to build the right solution — this time starting from Amdocs' own OOB product as the foundation.",
     photo: vfroStressed,
     photoAlt: "Eli — determined, recovering",
     quote: "Working on the new concept based on OOB",
@@ -106,7 +105,7 @@ const stations = [
     phase: "The Design",
     color: "blue",
     title: "From OOB to Vodafone Romania",
-    body: "Side by side — the Amdocs OOB baseline on the left, and the tailored VFRO retail app on the right, adapted to Vodafone Romania's business flows and brand.",
+    body: "Side by side — the Amdocs OOB baseline on the left, and the tailored VFRO retail app on the right, adapted specifically to Vodafone Romania's business flows and brand.",
     appImages: [vfroOob, vfroApp1],
   },
   {
@@ -115,8 +114,6 @@ const stations = [
     color: "green",
     title: "It's a success!",
     body: "The delivered mockups created satisfaction all the way to the highest management levels, and significantly increased Vodafone Romania's confidence in Amdocs as their digital partner.",
-    photo: vfroSuccess,
-    photoAlt: "Eli — celebrating success",
     appImages: [vfroApp2, vfroApp3],
     quote: "XDC team delivered high-quality mock-ups which created customer satisfaction of the solution (till highest management levels) and increased their confidence in their selection of Amdocs as their partner to fulfill their Digital roadmap.",
     quoteAuthor: "Dror Lichtemberg, VFRO Service Partner",
@@ -128,8 +125,8 @@ const stations = [
     title: "Insights",
     body: "Two hard-won lessons that now inform how I approach every new project.",
     cards: [
-      { Icon: CheckCircle, color: "text-green-600", bg: "bg-green-50", title: "Early business validation", desc: "Never assume technical similarity means product similarity. Validate with the business team before design starts — every time." },
-      { Icon: Layers, color: "text-blue-600", bg: "bg-blue-50", title: "Start with OOB", desc: "The out-of-the-box product exists for a reason. Customise from a solid, proven baseline — don't copy a competitor." },
+      { icon: "✅", title: "Early business validation", desc: "Never assume technical similarity means product similarity. Validate with the business team before design starts — every time." },
+      { icon: "🏗️", title: "Start with OOB", desc: "The out-of-the-box product exists for a reason. Customise from a solid, proven baseline — don't copy a competitor." },
     ],
   },
 ];
@@ -213,10 +210,10 @@ export function VodafoneRomania() {
             </div>
           </div>
           <h1 className="text-4xl lg:text-6xl text-gray-900 mb-6 font-[Actor]">Vodafone Romania<br />Retail App</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mb-6">
+          <p className="text-xl text-gray-600 max-w-3xl mb-4">
             A story of assumption, failure, recovery, and a hard-won lesson about the importance of early business validation over technical shortcuts.
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mt-6">
             {["Telecom", "Retail App", "UX/UI Design", "Amdocs OOB", "Stakeholder Management"].map(tag => (
               <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">{tag}</span>
             ))}
@@ -226,24 +223,24 @@ export function VodafoneRomania() {
 
       {/* Timeline */}
       <section className="max-w-4xl mx-auto px-6 lg:px-12 mb-16">
-        <div className="relative pl-6">
+        <div className="relative pl-10">
           {/* Spine */}
-          <div className="absolute left-0 top-2 bottom-2 w-0.5 bg-gray-200" />
+          <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-200" />
 
-          {stations.map((station) => (
+          {stations.map((station, i) => (
             <motion.div
               key={station.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
               className="relative mb-16 last:mb-0"
             >
-              {/* Phase label with inline bullet */}
-              <div className="flex items-center gap-2 mb-2">
-                <div className={`w-3 h-3 rounded-full flex-shrink-0 ${dotColors[station.color]}`} />
-                <div className="text-xs font-medium uppercase tracking-widest text-gray-400">{station.phase}</div>
-              </div>
+              {/* Dot */}
+              <div className={`absolute -left-7 top-1.5 w-4 h-4 rounded-full border-2 border-white ${dotColors[station.color]}`} />
+
+              {/* Phase label */}
+              <div className="text-xs font-medium uppercase tracking-widest text-gray-400 mb-2">{station.phase}</div>
 
               {/* Title */}
               <h2 className="text-2xl lg:text-3xl text-gray-900 mb-3 font-[Actor]">{station.title}</h2>
@@ -281,31 +278,26 @@ export function VodafoneRomania() {
                 </div>
               )}
 
-              {/* Cards with Lucide icons */}
+              {/* Cards */}
               {station.cards && (
                 <div className={`grid gap-4 mb-5 ${station.cards.length === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-3"}`}>
-                  {station.cards.map((card, ci) => {
-                    const { Icon, color, bg, title, desc } = card as any;
-                    return (
-                      <motion.div
-                        key={ci}
-                        whileHover={{ y: -3 }}
-                        className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm"
-                      >
-                        <div className={`w-10 h-10 ${bg} rounded-lg flex items-center justify-center mb-3`}>
-                          <Icon size={18} className={color} strokeWidth={1.5} />
-                        </div>
-                        <h4 className="text-sm font-medium text-gray-900 mb-2">{title}</h4>
-                        <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
-                      </motion.div>
-                    );
-                  })}
+                  {station.cards.map((card, ci) => (
+                    <motion.div
+                      key={ci}
+                      whileHover={{ y: -3 }}
+                      className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm"
+                    >
+                      <div className="text-2xl mb-3">{card.icon}</div>
+                      <h4 className="text-sm font-medium text-gray-900 mb-2">{card.title}</h4>
+                      <p className="text-xs text-gray-500 leading-relaxed">{card.desc}</p>
+                    </motion.div>
+                  ))}
                 </div>
               )}
 
               {/* App screenshots */}
               {station.appImages && (
-                <div className="grid grid-cols-2 gap-4 mb-5">
+                <div className={`grid gap-4 mb-5 ${station.appImages.length === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
                   {station.appImages.map((img, ii) => (
                     <motion.div
                       key={ii}
@@ -318,7 +310,7 @@ export function VodafoneRomania() {
                 </div>
               )}
 
-              {/* Quote block (client testimonial) */}
+              {/* Quote block (for success) */}
               {station.quoteAuthor && station.quote && (
                 <div className="border-l-4 border-blue-400 bg-blue-50 rounded-r-2xl px-6 py-5 mt-2">
                   <p className="text-gray-800 italic text-sm leading-relaxed mb-3">"{station.quote}"</p>
