@@ -8,16 +8,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import img7DashboardAll1 from "@/assets/418acd4ffba7074270c822e61977bb5208a3d670.png";
-import img6Dashboard2 from "@/assets/c20ee02e009a7c2f87dba4291c1ae1984adc387f.png";
-import img3DansPage1 from "@/assets/78a77931b6bc86153b352e6ee7e69c747831887d.png";
-import img4NativeMen1 from "@/assets/3feaa759964b53942df4c091bab9013ef366fd15.png";
-import img5DansPageNotification1 from "@/assets/bc3ffec910235d66d6c66d7e71f4958163d24a8f.png";
-import workshopImage from "@/assets/dee6f445e99c1e80101bc5b66d8617fe683d31bf.png";
+import img7DashboardAll1 from "figma:asset/418acd4ffba7074270c822e61977bb5208a3d670.png";
+import img6Dashboard2 from "figma:asset/c20ee02e009a7c2f87dba4291c1ae1984adc387f.png";
+import img3DansPage1 from "figma:asset/78a77931b6bc86153b352e6ee7e69c747831887d.png";
+import img4NativeMen1 from "figma:asset/3feaa759964b53942df4c091bab9013ef366fd15.png";
+import img5DansPageNotification1 from "figma:asset/bc3ffec910235d66d6c66d7e71f4958163d24a8f.png";
+import workshopImage from "figma:asset/dee6f445e99c1e80101bc5b66d8617fe683d31bf.png";
 
 export function EcommerceOptimization() {
   const navigate = useNavigate();
-  const project = projects.find((p) => p.id === "im-free-again");
+  const project = projects.find((p) => p.id === "ecommerce-optimization");
   const [showVideo, setShowVideo] = useState(false);
 
   // DEBUG: Log imported values

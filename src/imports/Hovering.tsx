@@ -1,4 +1,4 @@
-import img7DashboardAll1 from "@/assets/418acd4ffba7074270c822e61977bb5208a3d670.png";
+import img7DashboardAll1 from "figma:asset/418acd4ffba7074270c822e61977bb5208a3d670.png";
 
 export default function Hovering() {
   return (
