@@ -7,14 +7,14 @@ import { ImageWithFallback } from "../figma/ImageWithFallback";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import bankingAppImage from "figma:asset/7f87584dfef486bea3c284234f73498dd67c9819.png";
-import amdocsAppImage from "figma:asset/e83de090439b1fe19ad9a605c2c9b56d4e58c631.png";
-import newProjectImage from "figma:asset/42c626e673f3c01200577fa14bd31c5dcfd49e82.png";
-import buildingBlocksImage from "figma:asset/b216ba02fe20ef316352409d4bfc53b041db7e08.png";
-import bimmatchSlide1 from "figma:asset/a1a53eff92385e7a516310af535124d0b95a24e3.png";
-import bimmatchSlide2 from "figma:asset/1075bd2bd7769c20a9d931b7ffdc0b20cdf89c90.png";
-import bimmatchSlide3 from "figma:asset/6cc191ff832474bb7684a41cadb9fffe197efa33.png";
-import bimmatchSlide4 from "figma:asset/9b0308f19eeb0f291eed688420838d7ee46a7c88.png";
+import bankingAppImage from "@/assets/7f87584dfef486bea3c284234f73498dd67c9819.png";
+import amdocsAppImage from "@/assets/e83de090439b1fe19ad9a605c2c9b56d4e58c631.png";
+import newProjectImage from "@/assets/42c626e673f3c01200577fa14bd31c5dcfd49e82.png";
+import buildingBlocksImage from "@/assets/b216ba02fe20ef316352409d4bfc53b041db7e08.png";
+import bimmatchSlide1 from "@/assets/a1a53eff92385e7a516310af535124d0b95a24e3.png";
+import bimmatchSlide2 from "@/assets/1075bd2bd7769c20a9d931b7ffdc0b20cdf89c90.png";
+import bimmatchSlide3 from "@/assets/6cc191ff832474bb7684a41cadb9fffe197efa33.png";
+import bimmatchSlide4 from "@/assets/9b0308f19eeb0f291eed688420838d7ee46a7c88.png";
 
 interface ProjectDetailTemplateProps {
   projectId: string;
@@ -45,21 +45,21 @@ export function ProjectDetailTemplate({ projectId }: ProjectDetailTemplateProps)
 
   // Helper function to get the correct image source
   const getImageSrc = (imageSrc: string) => {
-    if (imageSrc === "figma:asset/7f87584dfef486bea3c284234f73498dd67c9819.png") {
+    if (imageSrc === "@/assets/7f87584dfef486bea3c284234f73498dd67c9819.png") {
       return bankingAppImage;
-    } else if (imageSrc === "figma:asset/e83de090439b1fe19ad9a605c2c9b56d4e58c631.png") {
+    } else if (imageSrc === "@/assets/e83de090439b1fe19ad9a605c2c9b56d4e58c631.png") {
       return amdocsAppImage;
-    } else if (imageSrc === "figma:asset/42c626e673f3c01200577fa14bd31c5dcfd49e82.png") {
+    } else if (imageSrc === "@/assets/42c626e673f3c01200577fa14bd31c5dcfd49e82.png") {
       return newProjectImage;
-    } else if (imageSrc === "figma:asset/b216ba02fe20ef316352409d4bfc53b041db7e08.png") {
+    } else if (imageSrc === "@/assets/b216ba02fe20ef316352409d4bfc53b041db7e08.png") {
       return buildingBlocksImage;
-    } else if (imageSrc === "figma:asset/a1a53eff92385e7a516310af535124d0b95a24e3.png") {
+    } else if (imageSrc === "@/assets/a1a53eff92385e7a516310af535124d0b95a24e3.png") {
       return bimmatchSlide1;
-    } else if (imageSrc === "figma:asset/1075bd2bd7769c20a9d931b7ffdc0b20cdf89c90.png") {
+    } else if (imageSrc === "@/assets/1075bd2bd7769c20a9d931b7ffdc0b20cdf89c90.png") {
       return bimmatchSlide2;
-    } else if (imageSrc === "figma:asset/6cc191ff832474bb7684a41cadb9fffe197efa33.png") {
+    } else if (imageSrc === "@/assets/6cc191ff832474bb7684a41cadb9fffe197efa33.png") {
       return bimmatchSlide3;
-    } else if (imageSrc === "figma:asset/9b0308f19eeb0f291eed688420838d7ee46a7c88.png") {
+    } else if (imageSrc === "@/assets/9b0308f19eeb0f291eed688420838d7ee46a7c88.png") {
       return bimmatchSlide4;
     }
     return imageSrc;
