@@ -223,9 +223,9 @@ export function VodafoneRomania() {
 
       {/* Timeline */}
       <section className="max-w-4xl mx-auto px-6 lg:px-12 mb-16">
-        <div className="relative pl-10">
+        <div className="relative pl-6">
           {/* Spine */}
-          <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-200" />
+          <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gray-200" />
 
           {stations.map((station, i) => (
             <motion.div
@@ -236,11 +236,11 @@ export function VodafoneRomania() {
               transition={{ duration: 0.5, delay: 0.05 }}
               className="relative mb-16 last:mb-0"
             >
-              {/* Dot */}
-              <div className={`absolute -left-7 top-1.5 w-4 h-4 rounded-full border-2 border-white ${dotColors[station.color]}`} />
-
-              {/* Phase label */}
-              <div className="text-xs font-medium uppercase tracking-widest text-gray-400 mb-2">{station.phase}</div>
+              {/* Phase label with inline dot */}
+              <div className="flex items-center gap-2 mb-2">
+                <div className={`w-3 h-3 rounded-full flex-shrink-0 ${dotColors[station.color]}`} />
+                <div className="text-xs font-medium uppercase tracking-widest text-gray-400">{station.phase}</div>
+              </div>
 
               {/* Title */}
               <h2 className="text-2xl lg:text-3xl text-gray-900 mb-3 font-[Actor]">{station.title}</h2>
