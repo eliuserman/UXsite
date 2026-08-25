@@ -234,7 +234,7 @@ export function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
                 className="text-lg text-gray-600 max-w-xl"
-              >I'm Eli, a UX expert, product strategist, and a team leader, specializing in turning complex technical systems into clear, valuable solutions. Proven in 0 to 1 product success, discovery-driven design, and scaling adoption through close collaboration with customers, dev teams, and stakeholders.</motion.p>
+              >I'm Eli, a UX expert, product strategist, and team leader focused on shaping AI-powered products and turning complex technologies into clear, valuable experiences. Proven in 0-to-1 product success, discovery-driven design, and scaling adoption through close collaboration with customers, dev teams, and stakeholders.</motion.p>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
